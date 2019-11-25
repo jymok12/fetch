@@ -180,10 +180,8 @@ fetch('/avatars', {
 
 ### Caveats
 
-* The Promise returned from `fetch()` **won't reject on HTTP error status**
-  even if the response is an HTTP 404 or 500. Instead, it will resolve normally,
-  and it will only reject on network failure or if anything prevented the
-  request from completing.
+* If the response is HTTP 404 or 500, fetch() would not reject HTTP error status. 
+  HTTP 404 or 500 will only reject network failure otherwise it will resolve normally.
 
 * For maximum browser compatibility when it comes to sending & receiving
   cookies, always supply the `credentials: 'same-origin'` option instead of
